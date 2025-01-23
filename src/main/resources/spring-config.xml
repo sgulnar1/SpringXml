@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="account" class="Account">
+        <constructor-arg value="1"/>
+        <constructor-arg value="AZ147852"/>
+        <constructor-arg ref="employer"/>
+        <property name="transactions">
+            <list>
+                <bean id ="transaction1" class="Transaction">
+                    <constructor-arg value="1"/>
+                    <constructor-arg value="15"/>
+                    <constructor-arg value="MEDAXIL"/>
+                </bean>
+                <ref bean = "transaction2"/>
+
+            </list>
+        </property>
+    </bean>
+    <bean id="employer" class="Employer">
+        <constructor-arg value="1" type="int"/>
+        <property name="fullName" value="Gulnar"/>
+    </bean>
+<!--    <bean id="account2" class="Account">-->
+<!--        <property name="id" value="2"/>-->
+<!--        <property name="account" value="AZ741258"/>-->
+<!--        <property name="user" ref="customer"/>-->
+<!--    </bean>-->
+    <bean id="customer" class="Customer">
+        <property name="id" value="2"/>
+        <property name="fullName" value="Ayxan"/>
+    </bean>
+
+    <bean id ="transaction2" class="Transaction">
+        <property name="id" value="2"/>
+        <property name="amount" value="11.7"/>
+        <property name="operationType" value="MEXARIC"/>
+    </bean>
+</beans>

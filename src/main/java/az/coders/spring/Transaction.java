@@ -1,3 +1,8 @@
+package az.coders.spring;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Transaction {
     private int id;
     private double amount;
@@ -37,7 +42,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
+        return "az.coders.spring.Transaction{" +
                 "id=" + id +
                 ", amount=" + amount +
                 ", operationType=" + operationType +

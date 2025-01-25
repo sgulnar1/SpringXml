@@ -1,3 +1,5 @@
+package az.coders.spring;
+
 import java.util.List;
 
 public class Student {

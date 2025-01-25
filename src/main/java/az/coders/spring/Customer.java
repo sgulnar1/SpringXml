@@ -1,30 +1,18 @@
-public class Employer implements User {
+package az.coders.spring;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Customer implements User{
     private  int id;
     private String fullName;
-    private String password;
 
-    public Employer(int id, String fullName) {
+    public Customer(int id, String fullName) {
         this.id = id;
         this.fullName = fullName;
     }
 
-    public Employer(int id) {
-        System.out.println("id constructor");
-        this.id = id;
-    }
-
-    public Employer(String fullName) {
-        System.out.println("fullName constructor");
-        this.fullName = fullName;
-    }
-
-    public Employer(String fullName, String password) {
-        this.fullName = fullName;
-        this.password = password;
-    }
-
-
-    public Employer() {
+    public Customer() {
     }
 
     public int getId() {
@@ -45,7 +33,7 @@ public class Employer implements User {
 
     @Override
     public String toString() {
-        return "Employer{" +
+        return "az.coders.spring.Customer{" +
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
                 '}';

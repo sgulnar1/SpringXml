@@ -1,16 +1,25 @@
-import java.util.List;
+package az.coders.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+import java.util.Map;
+
+@Component
 public class Account {
     private int id;
     private String account;
+    @Autowired
+    @Qualifier("employer")
     private User user;
-    private List<Transaction> transactions;
+    private Map<Integer, Transaction> transactions;
 
-    public List<Transaction> getTransactions() {
+    public Map<Integer, Transaction> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
+    public void setTransactions(Map<Integer, Transaction> transactions) {
         this.transactions = transactions;
     }
 
@@ -33,12 +42,17 @@ public class Account {
     public User getUser() {
         return user;
     }
-
     public void setUser(User user) {
         this.user = user;
     }
 
-    public Account(int id, String account, User user) {
+    public Account(int id, String account) {
+        this.id = id;
+        this.account = account;
+    }
+
+    public Account(int id, String account,  User user) {
+        System.out.println("contructor init");
         this.id = id;
         this.account = account;
         this.user = user;
@@ -50,11 +64,19 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
+        return "az.coders.spring.Account{" +
                 "id=" + id +
                 ", account='" + account + '\'' +
                 ", user=" + user +
                 ", transactions=" + transactions +
                 '}';
+    }
+
+    public void startObject() {
+        System.out.println("init object");
+    }
+
+    public void destroyObject() {
+        System.out.println("destroy object");
     }
 }

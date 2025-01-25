@@ -1,42 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--		https://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--		http://www.springframework.org/schema/context-->
+<!--		https://www.springframework.org/schema/context/spring-context.xsd">-->
 
-    <bean id="account" class="Account">
-        <constructor-arg value="1"/>
-        <constructor-arg value="AZ147852"/>
-        <constructor-arg ref="employer"/>
-        <property name="transactions">
-            <list>
-                <bean id ="transaction1" class="Transaction">
-                    <constructor-arg value="1"/>
-                    <constructor-arg value="15"/>
-                    <constructor-arg value="MEDAXIL"/>
-                </bean>
-                <ref bean = "transaction2"/>
+<!--    <context:component-scan base-package="az.coders.spring"/>-->
+<!--    <context:annotation-config/>-->
+<!--    <bean id="account" class="az.coders.spring.Account" init-method="startObject"-->
+<!--          destroy-method="destroyObject" scope="prototype" autowire="constructor">-->
 
-            </list>
-        </property>
-    </bean>
-    <bean id="employer" class="Employer">
-        <constructor-arg value="1" type="int"/>
-        <property name="fullName" value="Gulnar"/>
-    </bean>
-<!--    <bean id="account2" class="Account">-->
+
+<!--        <constructor-arg value="1"/>-->
+<!--        <constructor-arg value="AZ147852"/>-->
+<!--&lt;!&ndash;        <constructor-arg ref="employer"/>&ndash;&gt;-->
+<!--        <property name="transactions">-->
+<!--            <map>-->
+<!--                <entry key="1">-->
+<!--                    <bean id="transaction1" class="az.coders.spring.Transaction">-->
+<!--                        <constructor-arg value="1"/>-->
+<!--                        <constructor-arg value="15"/>-->
+<!--                        <constructor-arg value="MEDAXIL"/>-->
+<!--                    </bean>-->
+<!--                </entry>-->
+<!--                <entry key="2">-->
+<!--                    <ref bean="transaction2"/>-->
+<!--                </entry>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean id="user" class="az.coders.spring.Employer">-->
+<!--        <constructor-arg value="1" type="int"/>-->
+<!--        <property name="fullName" value="Gulnar"/>-->
+<!--    </bean>-->
+<!--    <bean id="account2" class="az.coders.spring.Account" >-->
+<!--        <qualifier value="customer"/>-->
 <!--        <property name="id" value="2"/>-->
 <!--        <property name="account" value="AZ741258"/>-->
-<!--        <property name="user" ref="customer"/>-->
+<!--&lt;!&ndash;        <property name="customer" ref="customer"/>&ndash;&gt;-->
 <!--    </bean>-->
-    <bean id="customer" class="Customer">
-        <property name="id" value="2"/>
-        <property name="fullName" value="Ayxan"/>
-    </bean>
+<!--&lt;!&ndash;    <bean id="customer" class="az.coders.spring.Customer" >&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="id" value="2"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="fullName" value="Ayxan"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
 
-    <bean id ="transaction2" class="Transaction">
-        <property name="id" value="2"/>
-        <property name="amount" value="11.7"/>
-        <property name="operationType" value="MEXARIC"/>
-    </bean>
-</beans>
+<!--    <bean id="transaction2" class="az.coders.spring.Transaction">-->
+<!--        <property name="id" value="2"/>-->
+<!--        <property name="amount" value="11.7"/>-->
+<!--        <property name="operationType" value="MEXARIC"/>-->
+<!--    </bean>-->
+<!--    <alias name="account" alias="a1"/>-->
+<!--</beans>-->
